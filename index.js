@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const dw = require('./config/datawarehouse.config');
 const app = express();
+const port = process.env.PORT || 3000;
+
 
 app.get('/', (req, res) => {
     res.send('¡Hola, mundo desde equipo 5!');
@@ -16,6 +18,6 @@ app.get('/sucursal',async (req,res)=>{
   }
 });
 
-app.listen(process.env.APP_PORT, () => {
+app.listen(port,'0.0.0.0' ,() => {
   console.log(`Servidor iniciado en el puerto ${process.env.APP_PORT}`);
 });
