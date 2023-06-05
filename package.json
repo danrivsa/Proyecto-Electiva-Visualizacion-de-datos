@@ -2,10 +2,10 @@
   "name": "proyecto_electiva_visualizacion_datos",
   "version": "1.0.0",
   "description": "proyecto para la materia electiva Visualizacion de datos UCAB",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "npx nodemon ./api/server.js"
+    "start:dev": "npx nodemon index.js"
   },
   "keywords": [],
   "author": "",
