@@ -1,0 +1,13 @@
+--USAR ESTE SCRIPT PARA ELIMINAR LAS TABLAS DEL DATAWAREHOUSE
+DROP TABLE hechos_estadisticas_alquiler;
+DROP TABLE sucursal;
+DROP TABLE tiempo;
+DROP TABLE metodo_pago;
+DROP TABLE vehiculo;
+
+--USAR ESTE SCRIPT PARA ELIMINAR LA DATA DEL DATA WAREHOUSE
+DELETE FROM hechos_estadisticas_alquiler;
+DELETE FROM sucursal;
+DELETE FROM tiempo;
+DELETE FROM metodo_pago;
+DELETE FROM vehiculo;
