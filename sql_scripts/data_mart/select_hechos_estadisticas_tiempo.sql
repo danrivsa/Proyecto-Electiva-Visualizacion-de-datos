@@ -1,0 +1,1 @@
+SELECT h.*,t.* FROM hechos_estadisticas_alquiler h INNER JOIN tiempo t on t.id = h.id_tiempo 
