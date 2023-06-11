@@ -21,17 +21,17 @@ insert into vehiculo (id, placa, color, marca, modelo, fecha_fabricacion, fecha_
 insert into vehiculo (id, placa, color, marca, modelo, fecha_fabricacion, fecha_carga) values (20, 'WAUVFAFH1BN589201', 'Indigo', 'Volkswagen', 'Phaeton', '5/23/2022', '5/30/2023');
 
 --metodo_pago
-insert into metodo_pago (nombre, fecha_carga) values ('jcb', '4/3/2023');
-insert into metodo_pago (nombre, fecha_carga) values ('jcb', '12/30/2022');
-insert into metodo_pago (nombre, fecha_carga) values ('visa', '9/28/2022');
-insert into metodo_pago (nombre, fecha_carga) values ('jcb', '8/26/2022');
-insert into metodo_pago (nombre, fecha_carga) values ('jcb', '2/28/2023');
-insert into metodo_pago (nombre, fecha_carga) values ('switch', '4/14/2023');
-insert into metodo_pago (nombre, fecha_carga) values ('jcb', '8/30/2022');
+insert into metodo_pago (id,nombre, fecha_carga) values (1,'jcb', '4/3/2023');
+insert into metodo_pago (id,nombre, fecha_carga) values (2,'jcb', '12/30/2022');
+insert into metodo_pago (id,nombre, fecha_carga) values (3,'visa', '9/28/2022');
+insert into metodo_pago (id,nombre, fecha_carga) values (4,'jcb', '8/26/2022');
+insert into metodo_pago (id,nombre, fecha_carga) values (5,'jcb', '2/28/2023');
+insert into metodo_pago (id,nombre, fecha_carga) values (6,'switch', '4/14/2023');
+insert into metodo_pago (id,nombre, fecha_carga) values (7,'jcb', '8/30/2022');
 
 
 --sucursal
-Insert into sucursal(nombre,ubicacion,latitud,longitud) VALUES ('sucursal 5','Venezuela, Caracas, las mercedes, Calle paris', 10.0, -66.5);
+Insert into sucursal(id,nombre,ubicacion,latitud,longitud) VALUES (1,'sucursal 5','Venezuela, Caracas, las mercedes, Calle paris', 10.0, -66.5);
 
 --tiempo
 insert into tiempo (year, month, day, hour) values (2023, 9, 20, 15);
