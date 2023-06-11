@@ -32,6 +32,7 @@ CREATE TABLE vehiculo(
     id SERIAL,
     placa VARCHAR(250),
     marca VARCHAR(250),
+    modelo VARCHAR(250),
     color VARCHAR(250),
     fecha_fabricacion DATE,
     fecha_carga DATE DEFAULT CURRENT_DATE, 
