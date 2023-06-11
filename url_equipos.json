@@ -1,0 +1,7 @@
+{
+    "url_equipos":[
+        {   "n_equipo":7,
+            "url":"https://apiintegraciondatos-production.up.railway.app/Datamart/ObtenerDatosDW"
+        }
+    ]
+}
