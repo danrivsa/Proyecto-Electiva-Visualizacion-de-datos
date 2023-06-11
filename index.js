@@ -3,7 +3,6 @@ const express = require('express');
 const dw = require('./config/datawarehouse.config');
 const app = express();
 const port = process.env.PORT || 3000;
-const urls_object = require('./url_equipos.json');
 const axios = require('axios');
 const datamart_model = require('./models/modelo_datamart');
 const modelo_datamart = require('./models/modelo_datamart');
