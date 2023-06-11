@@ -13,12 +13,11 @@ CREATE TABLE sucursal(
 );
 
 CREATE TABLE tiempo(
-    id SERIAL,
     year INT,
     month INT,
     day INT,
     hour INT,
-    CONSTRAINT PK_tiempo PRIMARY KEY(id)
+    CONSTRAINT PK_tiempo PRIMARY KEY(year,month,day,hour)
 );
 
 CREATE TABLE metodo_pago(
@@ -40,29 +39,34 @@ CREATE TABLE vehiculo(
     CONSTRAINT PK_vehiculo PRIMARY KEY (id)
 );
 
-CREATE TABLE hechos_estadisticas_alquiler(
-    id SERIAL,
-    id_alquiler INT,
+CREATE TABLE hechos_estadisticas_alquiler(    
+    id_sucursal INT,
     id_vehiculo INT,
     id_metodo_pago INT,
-    id_tiempo INT,
-    id_sucursal INT,
-    balance_general FLOAT,
-    porc_ingresos_egresos FLOAT,
-    porc_vehiculos_utilizados FLOAT,
+    id_year INT DEFAULT 2023,
+    id_month INT DEFAULT 0,
+    id_day INT DEFAULT 0,
+    id_hour INT DEFAULT 0,
+    ganancia_neta FLOAT,
+    porc_ingresos FLOAT,
+    porc_egresos FLOAT,
     porc_satisfaccion_cliente FLOAT,
-    top_metodo_pago VARCHAR(250),
+    posicion_top_metodo_pago INT,
     metodo_pago_veces_utilizado INT,
-    top_vehiculo_alquilado VARCHAR(250),
+    porcentaje_utilizacion_metodo_pago FLOAT,
+    modelo_veces_alquilado INT,
+    modelo_porcentaje_alquilado FLOAT,
+    posicion_top_modelo_vehiculo_alquilado INT,
+    porcentaje_vehiculos_disponibles FLOAT,
     ingresos FLOAT,
     egresos FLOAT,
     duracion_promedio_alquiler FLOAT,
     total_alquileres FLOAT,
+    porcentaje_vehiculos_utilizados FLOAT,
 
-
-    CONSTRAINT PK_hecho PRIMARY KEY(id),
+    CONSTRAINT PK_hecho PRIMARY KEY(id_vehiculo,id_metodo_pago,id_year,id_month,id_day,id_hour,id_sucursal),
     CONSTRAINT FK_hecho_vehiculo FOREIGN KEY(id_vehiculo) references vehiculo(id),
     CONSTRAINT FK_hecho_metodo_pago FOREIGN KEY(id_metodo_pago) references metodo_pago(id),
-    CONSTRAINT FK_hecho_tiempo FOREIGN KEY(id_tiempo) references tiempo(id),
+    CONSTRAINT FK_hecho_tiempo FOREIGN KEY(id_year,id_month,id_day,id_hour) references tiempo(year,month,day,hour),
     CONSTRAINT FK_hecho_sucursal FOREIGN KEY(id_sucursal) references sucursal(id)
 );
