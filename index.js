@@ -48,31 +48,34 @@ app.get('/datamart-equipo-5/obtener-datos-dw',async (req,res)=>{
       }
     });
 
-    const res_estadisticas_alquiler = await dw.query(`SELECT h.*,t.* FROM hechos_estadisticas_alquiler h INNER JOIN tiempo t on t.id = h.id_tiempo`);
+    const res_estadisticas_alquiler = await dw.query(`SELECT * FROM hechos_estadisticas_alquiler`);
     const hechos_estadisticas_alquiler = res_estadisticas_alquiler.rows.map((res)=>{
       return {
         tiempo:{
-          id_anio: res.year,
-          id_mes: res.month,
-          id_dia: res.day,
-          id_hora: res.hour
+          id_anio: res.id_year,
+          id_mes: res.id_month,
+          id_dia: res.id_day,
+          id_hora: res.id_hour
         },
-        porc_satisfaccion_cliente: res.porc_satisfaccion_cliente,
-        top_metodo_pago_utilizado: res.top_metodo_pago,
-        top_metodo_pago_porcentaje_util : 0,
-        top_modelo_vehiculo_alquilado : res.top_vehiculo_alquilado,
-        modelo_veces_alquilado : 0,
-        modelo_porcentaje_alquilado:0,
-        ingresos:res.ingresos,
-        egresos:res.egresos,
-        porc_ingresos_egresos:res.porc_ingresos_egresos,
-        balance_general:res.balance_general,
-        porc_vehiculos_disponibles:20,
-        duracion_promedio_alquiler:res.duracion_promedio_alquiler,
-        total_alquileres:res.total_alquileres,
-        porC_VEHICULOS_UTILIZADOS: 0,
-        modelO_VEHICULO_ID_MODELO: 0,
-        metodO_PAGO_ID_METODO: 0
+        porc_Satisfaccion_Cliente: res.porc_satisfaccion_cliente, //porcentaje de satifficacion cliente -> promedio de calificacion de cliente
+        id_metodo_pago: res.id_metodo_pago,
+        posicion_top_metodo_pago_utilizado: res.posicion_top_metodo_pago,
+        metodo_pago_veces_utilizado: res.metodo_pago_veces_utilizado,
+        porcentaje_utilizacion_metodo_pago: res.porcentaje_utilizacion_metodo_pago,
+        id_modelo_vehiculo: res.id_vehiculo,
+        posicion_top_modelo_vehiculo_alquilado: res.posicion_top_modelo_vehiculo_alquilado, //para top 10 vehiculos alquilados
+        modelo_veces_alquilado: res.modelo_veces_alquilado, //cantidad de veces que fue alquilado este modelo de vehiculo
+        modelo_porcentaje_alquilado: res.modelo_porcentaje_alquilado, //cantidad de veces que fue alquilado / total de alquileres
+        ingresos: res.ingresos, //registro de ingresos diario o mensual o annual o como se elija
+        egresos: res.egresos, //registro de egresos diario o mensual o annual o como se elija
+        porc_ingresos: res.porc_ingresos, //formula de calculo ((ingresos-egresos)/ingresos) x 100
+        porc_egresos: res.porc_egresos, //formula de calculo (egresos/ingresos) x 100
+        ganancia_neta: res.ganancia_neta, // formula = ingresos - egresos
+        porc_vehiculos_disponibles:res.porc_vehiculos_disponibles, //(vehiculos no alquilados / total de vehiculos) x 100 - tendencia y estadisticas de alquiler 
+        duracion_promedio_alquiler:res.duracion_promedio_alquiler, //tendencia y estadisticas de alquiler 
+        total_alquileres:res.total_alquileres, //tendencia y estadisticas de alquiler
+        porc_vehiculos_utilizados:res.porc_vehiculos_utilizados,  //tendencia y estadisticas de alquer
+  
 
       }
     });

@@ -30,11 +30,11 @@ CREATE TABLE metodo_pago(
 
 CREATE TABLE vehiculo(
     id SERIAL,
-    tipo_vehiculo VARCHAR(250),
-    fecha_carga DATE DEFAULT CURRENT_DATE, 
+    placa VARCHAR(250),
     marca VARCHAR(250),
-    modelo VARCHAR(250),
+    color VARCHAR(250),
     fecha_fabricacion DATE,
+    fecha_carga DATE DEFAULT CURRENT_DATE, 
 
     CONSTRAINT PK_vehiculo PRIMARY KEY (id)
 );
