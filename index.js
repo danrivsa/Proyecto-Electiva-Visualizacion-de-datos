@@ -81,8 +81,8 @@ app.get('/datamart-equipo-5/obtener-datos-dw',async (req,res)=>{
     });
     const res_data = {
       sucursal: data_sucursal,
-      modelo_vehiculos: inventario_vehiculos,
-      metodo_pagos:metodos_de_pago,
+      modelo_Vehiculos: inventario_vehiculos,
+      metodo_Pagos:metodos_de_pago,
       estadisticas_sucursal:hechos_estadisticas_alquiler
     }
     res.status(200).send(res_data);
