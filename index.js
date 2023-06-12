@@ -71,7 +71,7 @@ app.get('/datamart-equipo-5/obtener-datos-dw',async (req,res)=>{
         porc_ingresos: res.porc_ingresos, //formula de calculo ((ingresos-egresos)/ingresos) x 100
         porc_egresos: res.porc_egresos, //formula de calculo (egresos/ingresos) x 100
         ganancia_neta: res.ganancia_neta, // formula = ingresos - egresos
-        porc_vehiculos_disponibles:res.porc_vehiculos_disponibles, //(vehiculos no alquilados / total de vehiculos) x 100 - tendencia y estadisticas de alquiler 
+        porc_vehiculos_disponibles:res.porcentaje_vehiculos_disponibles, //(vehiculos no alquilados / total de vehiculos) x 100 - tendencia y estadisticas de alquiler 
         duracion_promedio_alquiler:res.duracion_promedio_alquiler, //tendencia y estadisticas de alquiler 
         total_alquileres:res.total_alquileres, //tendencia y estadisticas de alquiler
         porc_vehiculos_utilizados:res.porc_vehiculos_utilizados,  //tendencia y estadisticas de alquer
