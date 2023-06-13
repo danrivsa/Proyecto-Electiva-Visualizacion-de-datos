@@ -5,9 +5,11 @@ DROP TABLE tiempo;
 DROP TABLE metodo_pago;
 DROP TABLE vehiculo;
 
+--ELIMINAR DATA DE LA SUCURSAL
+DELETE FROM sucursal;
+
 --USAR ESTE SCRIPT PARA ELIMINAR LA DATA DEL DATA WAREHOUSE
 DELETE FROM hechos_estadisticas_alquiler;
-DELETE FROM sucursal;
 DELETE FROM tiempo;
 DELETE FROM metodo_pago;
 DELETE FROM vehiculo;

@@ -1,3 +1,6 @@
+--sucursal
+Insert into sucursal(id,nombre,ubicacion,latitud,longitud) VALUES (1,'sucursal Las mercedes, Caracas, Venezuela','Venezuela, Caracas, las mercedes, Calle paris', 10.4819994, -66.8611573);
+
 --VEHICULOS
 insert into vehiculo (id, placa, color, marca, modelo, fecha_fabricacion, fecha_carga) values (1, 'WAUKD98P77A160395', 'Red', 'Daewoo', 'Nubira', '6/26/2022', '4/30/2023');
 insert into vehiculo (id, placa, color, marca, modelo, fecha_fabricacion, fecha_carga) values (2, '3N6CM0KN8FK825115', 'Teal', 'Mercedes-Benz', 'Sprinter 2500', '10/14/2022', '6/2/2023');
@@ -31,7 +34,7 @@ insert into metodo_pago (id,nombre, fecha_carga) values (7,'jcb', '8/30/2022');
 
 
 --sucursal
-Insert into sucursal(id,nombre,ubicacion,latitud,longitud) VALUES (1,'sucursal 5','Venezuela, Caracas, las mercedes, Calle paris', 10.0, -66.5);
+Insert into sucursal(id,nombre,ubicacion,latitud,longitud) VALUES (1,'sucursal 5','Venezuela, Caracas, las mercedes, Calle paris', 10.4819994, -66.8611573);
 
 --tiempo
 insert into tiempo (year, month, day, hour) values (2023, 9, 20, 15);

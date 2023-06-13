@@ -40,10 +40,10 @@ CREATE TABLE vehiculo(
     CONSTRAINT PK_vehiculo PRIMARY KEY (id)
 );
 
-CREATE TABLE hechos_estadisticas_alquiler(    
-    id_sucursal INT,
-    id_vehiculo INT,
-    id_metodo_pago INT,
+CREATE TABLE hechos_estadisticas_alquiler(  
+    id_sucursal INT Default 1,
+    id_vehiculo INT default 1,
+    id_metodo_pago INT default 1,
     id_year INT DEFAULT 2023,
     id_month INT DEFAULT 0,
     id_day INT DEFAULT 0,
